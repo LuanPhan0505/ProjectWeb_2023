@@ -29,7 +29,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
     })
 })
 
-mongoose.connect("{Paste Your MongoDB URI Link Here}/e-commerce");
+// mongoose.connect("mongodb+srv://luanhuuphan0505:luanlam1@cluster0.hnxxyyy.mongodb.net/e-commerce");
 
 // MiddleWare
 const fetchuser = async (req, res, next) => {
@@ -103,6 +103,7 @@ const Product = mongoose.model("Product", {
 app.get("/", (req, res) => {
   res.send("Root");
 });
+
 
 //Create an endpoint at ip/login for login the user and giving token
 app.post('/login', async (req, res) => {
