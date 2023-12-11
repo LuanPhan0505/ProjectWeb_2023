@@ -22,12 +22,12 @@ class HomeController {
     }
 
     async showProduct(req, res) {
-        let startIndex = (req.query.page - 1) * 2
+        let startIndex = (req.query.page - 1) * 4
         let category = req.params.category
 
         let productCount = await Product.countDocuments({ category: category })
 
-        let products = await Product.find({ category: category }).limit(2).skip(startIndex).exec()
+        let products = await Product.find({ category: category }).limit(4).skip(startIndex).exec()
         res.json({ products: products, productCount: productCount })
     }
 
